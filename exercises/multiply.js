@@ -10,6 +10,17 @@
 
 // Your code :
 
+function multiply(x,y){
+	if (x===0 || y===0) return 0;
+	let z = 0, isPos = (x>=0&&y>=0)||(x<0&&y<0);
+	x = x<0?-x:x;
+	y = y<0?-y:y;
+	for (let i = 1; i <=y; i++){
+		z+= x;
+	}
+	return isPos?z:-z;
+}
+
 //* Begin of tests
 const assert = require('assert')
 
@@ -25,4 +36,4 @@ assert.strictEqual(multiply(0, 0), 0)
 assert.strictEqual(multiply(123, -22), -2706)
 assert.strictEqual(multiply(-22, 123), -2706)
 assert.strictEqual(multiply(-22, -123), 2706)
-// End of tests */
+// End of tests *//
